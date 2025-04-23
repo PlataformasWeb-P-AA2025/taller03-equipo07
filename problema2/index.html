@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Datepicker - Default functionality</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    } );
+    </script>
+  </head>
+  <body>
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre">
+
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido">
+
+      <label for="datepicker">Fecha de nacimiento:</label>
+      <input type="text" id="datepicker">
+
+      <button type="submit">Generar Mensaje</button>
+    </div>
+    <div>
+      <p id="mensajefinal">
+      </p>
+    </div>
+  </body>
+  <script>
+    $(document).ready(function() {
+      $( "button" ).click(function() {
+        var nombre = $('#nombre').text();
+        var apellido = $('#apellido').text();
+        var fecha = $()
+        $('#mensajeFinal').text("Su carrera es: "+ texto1 + ". Su universidad es: "
+          + texto2);
+        console.log(texto1);
+      });
+    });
+  </script>
+</html>
