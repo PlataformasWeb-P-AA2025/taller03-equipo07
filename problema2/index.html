@@ -6,41 +6,45 @@
     <title>jQuery UI Datepicker - Default functionality</title>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="estilos/estilos.css" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
-    <script>
-    $( function() {
-      $( "#datepicker" ).datepicker();
-    } );
-    </script>
   </head>
   <body>
-    <div>
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre">
+    <div class="presentacion">
+      <div class="formulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre">
 
-      <label for="apellido">Apellido:</label>
-      <input type="text" id="apellido">
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido">
 
-      <label for="datepicker">Fecha de nacimiento:</label>
-      <input type="text" id="datepicker">
+        <label for="datepicker">Fecha de nacimiento:</label>
+        <input type="text" id="datepicker">
 
-      <button type="submit">Generar Mensaje</button>
-    </div>
-    <div>
-      <p id="mensajefinal">
-      </p>
+        <button type="submit">Generar Mensaje</button>
+      </div>
+      <div class="info">
+        <p id="mensajeFinal"></p>
+        <p id="mostrarDatos"></p>
+      </div>
     </div>
   </body>
   <script>
     $(document).ready(function() {
+      $( "#datepicker" ).datepicker();
       $( "button" ).click(function() {
-        var nombre = $('#nombre').text();
-        var apellido = $('#apellido').text();
-        var fecha = $()
-        $('#mensajeFinal').text("Su carrera es: "+ texto1 + ". Su universidad es: "
-          + texto2);
-        console.log(texto1);
+        // almacenar los valores de los inputs en variables
+        var nombre = $('#nombre').val();
+        var apellido = $('#apellido').val();
+        var fecha = $('#datepicker').val();
+        // presentar los valores en consola
+        console.log(nombre);
+        console.log(apellido);
+        console.log(fecha);
+        // mostar los datos en la página
+        $('#mensajeFinal').text("Datos ingresados");
+        $('#mostrarDatos').append("<p>" + nombre + "<br>" + apellido + "<br>" + fecha + "</p>");
       });
     });
   </script>
